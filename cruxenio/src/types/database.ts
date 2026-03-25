@@ -6,13 +6,13 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[];
 
-export type Database = {
+interface Database {
   public: {
-    Tables: {};
-    Views: {};
-    Functions: {};
-    Enums: {};
-    CompositeTypes: {};
+    Tables: Record<string, unknown>;
+    Views: Record<string, unknown>;
+    Functions: Record<string, unknown>; 
+    Enums: Record<string, unknown>;
+    CompositeTypes: Record<string, unknown>;
   };
   cruxenio: {
     Tables: {
@@ -39,7 +39,7 @@ export type Database = {
           name?: string | null;
           source?: string;
           metadata?: Json;
-          created_at?: string;
+          created_at?: string; 
         };
         Relationships: [];
       };
@@ -89,9 +89,9 @@ export type Database = {
         Relationships: [];
       };
     };
-    Views: {};
-    Functions: {};
-    Enums: {};
-    CompositeTypes: {};
+    Views: Record<string, unknown>;
+    Functions: Record<string, unknown>;
+    Enums: Record<string, unknown>;
+    CompositeTypes: Record<string, unknown>;
   };
-};
+}
